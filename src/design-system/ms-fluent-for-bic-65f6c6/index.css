@@ -1,0 +1,522 @@
+/* ─── Fluent Token Defaults ───────────────────────────────────────────
+   Base values for all Fluent design tokens, matching webLightTheme.
+   FluentProvider's scoped class overrides these via CSS custom property
+   inheritance (closer ancestor wins), so dark mode and custom themes
+   work correctly without any changes here.
+   
+   These are required because FluentProvider injects tokens via
+   insertRule() on a <style> tag, which can fail in sandboxed iframe
+   contexts where the CSSOM sheet isn't available.
+──────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── Spacing ─── */
+  --spacingHorizontalNone: 0;
+  --spacingHorizontalXXS: 2px;
+  --spacingHorizontalXS: 4px;
+  --spacingHorizontalSNudge: 6px;
+  --spacingHorizontalS: 8px;
+  --spacingHorizontalMNudge: 10px;
+  --spacingHorizontalM: 12px;
+  --spacingHorizontalL: 16px;
+  --spacingHorizontalXL: 20px;
+  --spacingHorizontalXXL: 24px;
+  --spacingHorizontalXXXL: 32px;
+
+  /* ─── Typography ─── */
+  --fontFamilyBase: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  --fontFamilyMonospace: "Cascadia Code", "Fira Code", Consolas, monospace;
+  --fontFamilyNumeric: Bahnschrift, "Segoe UI", system-ui, sans-serif;
+
+  --fontSizeBase100: 10px;
+  --fontSizeBase200: 12px;
+  --fontSizeBase300: 14px;
+  --fontSizeBase400: 16px;
+  --fontSizeBase500: 20px;
+  --fontSizeBase600: 24px;
+  --fontSizeHero700: 28px;
+  --fontSizeHero800: 32px;
+  --fontSizeHero900: 40px;
+  --fontSizeHero1000: 68px;
+
+  --lineHeightBase100: 14px;
+  --lineHeightBase200: 16px;
+  --lineHeightBase300: 20px;
+  --lineHeightBase400: 22px;
+  --lineHeightBase500: 28px;
+  --lineHeightBase600: 32px;
+  --lineHeightHero700: 36px;
+  --lineHeightHero800: 40px;
+  --lineHeightHero900: 52px;
+  --lineHeightHero1000: 92px;
+
+  --fontWeightRegular: 400;
+  --fontWeightMedium: 500;
+  --fontWeightSemibold: 600;
+  --fontWeightBold: 700;
+
+  /* ─── Border radius ─── */
+  --borderRadiusNone: 0;
+  --borderRadiusSmall: 2px;
+  --borderRadiusMedium: 4px;
+  --borderRadiusLarge: 6px;
+  --borderRadiusXLarge: 8px;
+  --borderRadiusCircular: 10000px;
+
+  /* ─── Shadows ─── */
+  --shadow2: 0 0 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14);
+  --shadow4: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14);
+  --shadow8: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14);
+  --shadow16: 0 0 2px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.14);
+  --shadow28: 0 0 8px rgba(0, 0, 0, 0.12), 0 14px 28px rgba(0, 0, 0, 0.14);
+  --shadow64: 0 0 8px rgba(0, 0, 0, 0.12), 0 32px 64px rgba(0, 0, 0, 0.24);
+  --shadow2Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow4Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow8Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.25);
+  --shadow16Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.25);
+
+  /* ─── Duration / motion ─── */
+  --durationUltraFast: 50ms;
+  --durationFaster: 100ms;
+  --durationFast: 150ms;
+  --durationNormal: 200ms;
+  --durationGentle: 250ms;
+  --durationSlow: 300ms;
+  --durationSlower: 400ms;
+  --durationUltraSlow: 500ms;
+
+  /* ─── Curves ─── */
+  --curveAccelerateMax: cubic-bezier(1, 0, 1, 1);
+  --curveAccelerateMid: cubic-bezier(0.7, 0, 1, 0.5);
+  --curveAccelerateMin: cubic-bezier(0.8, 0, 1, 1);
+  --curveDecelerateMax: cubic-bezier(0, 0, 0, 1);
+  --curveDecelerateMid: cubic-bezier(0.1, 0.9, 0.2, 1);
+  --curveDecelerateMin: cubic-bezier(0.33, 0, 0.1, 1);
+  --curveEasyEase: cubic-bezier(0.33, 0, 0.67, 1);
+  --curveEasyEaseMax: cubic-bezier(0.8, 0, 0.1, 1);
+  --curveLinear: cubic-bezier(0, 0, 1, 1);
+
+  /* ═══ COLOR TOKENS (webLightTheme defaults) ═══ */
+
+  /* ─── Neutral Backgrounds ─── */
+  --colorNeutralBackground1: #ffffff;
+  --colorNeutralBackground1Hover: #f5f5f5;
+  --colorNeutralBackground1Pressed: #e0e0e0;
+  --colorNeutralBackground1Selected: #ebebeb;
+  --colorNeutralBackground2: #fafafa;
+  --colorNeutralBackground2Hover: #f0f0f0;
+  --colorNeutralBackground2Pressed: #dbdbdb;
+  --colorNeutralBackground2Selected: #e6e6e6;
+  --colorNeutralBackground3: #f5f5f5;
+  --colorNeutralBackground3Hover: #ebebeb;
+  --colorNeutralBackground3Pressed: #d6d6d6;
+  --colorNeutralBackground3Selected: #e0e0e0;
+  --colorNeutralBackground4: #f0f0f0;
+  --colorNeutralBackground4Hover: #fafafa;
+  --colorNeutralBackground4Pressed: #f5f5f5;
+  --colorNeutralBackground4Selected: #ffffff;
+  --colorNeutralBackground5: #ebebeb;
+  --colorNeutralBackground5Hover: #f5f5f5;
+  --colorNeutralBackground5Pressed: #f0f0f0;
+  --colorNeutralBackground5Selected: #fafafa;
+  --colorNeutralBackground6: #e6e6e6;
+  --colorNeutralBackground7: #00000000;
+  --colorNeutralBackground7Hover: #ebebeb;
+  --colorNeutralBackground7Pressed: #d6d6d6;
+  --colorNeutralBackground7Selected: #00000000;
+  --colorNeutralBackground8: #fcfcfc;
+  --colorNeutralBackgroundInverted: #292929;
+  --colorNeutralBackgroundInvertedHover: #3d3d3d;
+  --colorNeutralBackgroundInvertedPressed: #1f1f1f;
+  --colorNeutralBackgroundInvertedSelected: #383838;
+  --colorNeutralBackgroundStatic: #333333;
+  --colorNeutralBackgroundAlpha: rgba(255, 255, 255, 0.5);
+  --colorNeutralBackgroundAlpha2: rgba(255, 255, 255, 0.8);
+  --colorNeutralBackgroundDisabled: #f0f0f0;
+  --colorNeutralBackgroundDisabled2: #ffffff;
+  --colorNeutralBackgroundInvertedDisabled: rgba(255, 255, 255, 0.1);
+
+  /* ─── Card Backgrounds ─── */
+  --colorNeutralCardBackground: #fafafa;
+  --colorNeutralCardBackgroundHover: #ffffff;
+  --colorNeutralCardBackgroundPressed: #f5f5f5;
+  --colorNeutralCardBackgroundSelected: #ebebeb;
+  --colorNeutralCardBackgroundDisabled: #f0f0f0;
+
+  /* ─── Subtle Backgrounds ─── */
+  --colorSubtleBackground: transparent;
+  --colorSubtleBackgroundHover: #f5f5f5;
+  --colorSubtleBackgroundPressed: #e0e0e0;
+  --colorSubtleBackgroundSelected: #ebebeb;
+  --colorSubtleBackgroundLightAlphaHover: rgba(255, 255, 255, 0.7);
+  --colorSubtleBackgroundLightAlphaPressed: rgba(255, 255, 255, 0.5);
+  --colorSubtleBackgroundLightAlphaSelected: transparent;
+  --colorSubtleBackgroundInverted: transparent;
+  --colorSubtleBackgroundInvertedHover: rgba(0, 0, 0, 0.1);
+  --colorSubtleBackgroundInvertedPressed: rgba(0, 0, 0, 0.3);
+  --colorSubtleBackgroundInvertedSelected: rgba(0, 0, 0, 0.2);
+
+  /* ─── Transparent Backgrounds ─── */
+  --colorTransparentBackground: transparent;
+  --colorTransparentBackgroundHover: transparent;
+  --colorTransparentBackgroundPressed: transparent;
+  --colorTransparentBackgroundSelected: transparent;
+
+  /* ─── Stencil (Skeleton) ─── */
+  --colorNeutralStencil1: #e6e6e6;
+  --colorNeutralStencil2: #fafafa;
+  --colorNeutralStencil1Alpha: rgba(0, 0, 0, 0.1);
+  --colorNeutralStencil2Alpha: rgba(0, 0, 0, 0.05);
+
+  /* ─── Overlay & Scrollbar ─── */
+  --colorBackgroundOverlay: rgba(0, 0, 0, 0.4);
+  --colorScrollbarOverlay: rgba(0, 0, 0, 0.5);
+
+  /* ─── Neutral Foregrounds ─── */
+  --colorNeutralForeground1: #242424;
+  --colorNeutralForeground1Hover: #242424;
+  --colorNeutralForeground1Pressed: #242424;
+  --colorNeutralForeground1Selected: #242424;
+  --colorNeutralForeground1Static: #242424;
+  --colorNeutralForeground2: #424242;
+  --colorNeutralForeground2Hover: #242424;
+  --colorNeutralForeground2Pressed: #242424;
+  --colorNeutralForeground2Selected: #242424;
+  --colorNeutralForeground2BrandHover: #0f6cbd;
+  --colorNeutralForeground2BrandPressed: #115ea3;
+  --colorNeutralForeground2BrandSelected: #0f6cbd;
+  --colorNeutralForeground2Link: #424242;
+  --colorNeutralForeground2LinkHover: #242424;
+  --colorNeutralForeground2LinkPressed: #242424;
+  --colorNeutralForeground2LinkSelected: #242424;
+  --colorNeutralForeground3: #616161;
+  --colorNeutralForeground3Hover: #424242;
+  --colorNeutralForeground3Pressed: #424242;
+  --colorNeutralForeground3Selected: #424242;
+  --colorNeutralForeground3BrandHover: #0f6cbd;
+  --colorNeutralForeground3BrandPressed: #115ea3;
+  --colorNeutralForeground3BrandSelected: #0f6cbd;
+  --colorNeutralForeground4: #707070;
+  --colorNeutralForeground5: #616161;
+  --colorNeutralForeground5Hover: #242424;
+  --colorNeutralForeground5Pressed: #242424;
+  --colorNeutralForeground5Selected: #242424;
+  --colorNeutralForegroundDisabled: #bdbdbd;
+  --colorNeutralForegroundInvertedDisabled: rgba(255, 255, 255, 0.4);
+  --colorNeutralForegroundOnBrand: #ffffff;
+  --colorNeutralForegroundStaticInverted: #ffffff;
+  --colorNeutralForegroundInverted: #ffffff;
+  --colorNeutralForegroundInvertedHover: #ffffff;
+  --colorNeutralForegroundInvertedPressed: #ffffff;
+  --colorNeutralForegroundInvertedSelected: #ffffff;
+  --colorNeutralForegroundInverted2: #ffffff;
+  --colorNeutralForegroundInvertedLink: #ffffff;
+  --colorNeutralForegroundInvertedLinkHover: #ffffff;
+  --colorNeutralForegroundInvertedLinkPressed: #ffffff;
+  --colorNeutralForegroundInvertedLinkSelected: #ffffff;
+
+  /* ─── Brand Backgrounds ─── */
+  --colorBrandBackground: #0f6cbd;
+  --colorBrandBackgroundHover: #115ea3;
+  --colorBrandBackgroundPressed: #0c3b5e;
+  --colorBrandBackgroundSelected: #0f548c;
+  --colorBrandBackgroundStatic: #0f6cbd;
+  --colorBrandBackground2: #ebf3fc;
+  --colorBrandBackground2Hover: #cfe4fa;
+  --colorBrandBackground2Pressed: #96c6fa;
+  --colorBrandBackground3Static: #0f548c;
+  --colorBrandBackground4Static: #0c3b5e;
+  --colorBrandBackgroundInverted: #ffffff;
+  --colorBrandBackgroundInvertedHover: #ebf3fc;
+  --colorBrandBackgroundInvertedPressed: #b4d6fa;
+  --colorBrandBackgroundInvertedSelected: #cfe4fa;
+
+  /* ─── Brand Foregrounds ─── */
+  --colorBrandForeground1: #0f6cbd;
+  --colorBrandForeground2: #115ea3;
+  --colorBrandForeground2Hover: #0f548c;
+  --colorBrandForeground2Pressed: #0a2e4a;
+  --colorBrandForegroundLink: #115ea3;
+  --colorBrandForegroundLinkHover: #0f548c;
+  --colorBrandForegroundLinkPressed: #0c3b5e;
+  --colorBrandForegroundLinkSelected: #115ea3;
+  --colorBrandForegroundInverted: #479ef5;
+  --colorBrandForegroundInvertedHover: #62abf5;
+  --colorBrandForegroundInvertedPressed: #479ef5;
+  --colorBrandForegroundOnLight: #0f6cbd;
+  --colorBrandForegroundOnLightHover: #115ea3;
+  --colorBrandForegroundOnLightPressed: #0e4775;
+  --colorBrandForegroundOnLightSelected: #0f548c;
+
+  /* ─── Compound Brand ─── */
+  --colorCompoundBrandForeground1: #0f6cbd;
+  --colorCompoundBrandForeground1Hover: #115ea3;
+  --colorCompoundBrandForeground1Pressed: #0f548c;
+  --colorCompoundBrandBackground: #0f6cbd;
+  --colorCompoundBrandBackgroundHover: #115ea3;
+  --colorCompoundBrandBackgroundPressed: #0f548c;
+  --colorCompoundBrandStroke: #0f6cbd;
+  --colorCompoundBrandStrokeHover: #115ea3;
+  --colorCompoundBrandStrokePressed: #0f548c;
+
+  /* ─── Neutral Strokes ─── */
+  --colorNeutralStroke1: #d1d1d1;
+  --colorNeutralStroke1Hover: #c7c7c7;
+  --colorNeutralStroke1Pressed: #b3b3b3;
+  --colorNeutralStroke1Selected: #bdbdbd;
+  --colorNeutralStroke2: #e0e0e0;
+  --colorNeutralStroke3: #f0f0f0;
+  --colorNeutralStroke4: #ebebeb;
+  --colorNeutralStroke4Hover: #e0e0e0;
+  --colorNeutralStroke4Pressed: #d6d6d6;
+  --colorNeutralStroke4Selected: #ebebeb;
+  --colorNeutralStrokeSubtle: #e0e0e0;
+  --colorNeutralStrokeAccessible: #616161;
+  --colorNeutralStrokeAccessibleHover: #575757;
+  --colorNeutralStrokeAccessiblePressed: #4d4d4d;
+  --colorNeutralStrokeAccessibleSelected: #0f6cbd;
+  --colorNeutralStrokeOnBrand: #ffffff;
+  --colorNeutralStrokeOnBrand2: #ffffff;
+  --colorNeutralStrokeDisabled: #e0e0e0;
+  --colorNeutralStrokeDisabled2: #ebebeb;
+  --colorNeutralStrokeInvertedDisabled: rgba(255, 255, 255, 0.4);
+  --colorNeutralStrokeAlpha: rgba(0, 0, 0, 0.05);
+  --colorNeutralStrokeAlpha2: rgba(255, 255, 255, 0.2);
+
+  /* ─── Brand Strokes ─── */
+  --colorBrandStroke1: #0f6cbd;
+  --colorBrandStroke2: #b4d6fa;
+  --colorBrandStroke2Hover: #77b7f7;
+  --colorBrandStroke2Pressed: #0f6cbd;
+  --colorBrandStroke2Contrast: #b4d6fa;
+
+  /* ─── Transparent Strokes ─── */
+  --colorTransparentStroke: transparent;
+  --colorTransparentStrokeInteractive: transparent;
+  --colorTransparentStrokeDisabled: transparent;
+
+  /* ─── Focus Strokes ─── */
+  --colorStrokeFocus1: #ffffff;
+  --colorStrokeFocus2: #000000;
+
+  /* ─── Status: Success ─── */
+  --colorStatusSuccessBackground1: #f1faf1;
+  --colorStatusSuccessBackground2: #9fd89f;
+  --colorStatusSuccessBackground3: #107c10;
+  --colorStatusSuccessForeground1: #0e700e;
+  --colorStatusSuccessForeground2: #094509;
+  --colorStatusSuccessForeground3: #107c10;
+  --colorStatusSuccessForegroundInverted: #54b054;
+  --colorStatusSuccessBorderActive: #107c10;
+  --colorStatusSuccessBorder1: #9fd89f;
+  --colorStatusSuccessBorder2: #107c10;
+
+  /* ─── Status: Warning ─── */
+  --colorStatusWarningBackground1: #fff9f5;
+  --colorStatusWarningBackground2: #fdcfb4;
+  --colorStatusWarningBackground3: #f7630c;
+  --colorStatusWarningForeground1: #bc4b09;
+  --colorStatusWarningForeground2: #8a3707;
+  --colorStatusWarningForeground3: #bc4b09;
+  --colorStatusWarningForegroundInverted: #faa06b;
+  --colorStatusWarningBorderActive: #f7630c;
+  --colorStatusWarningBorder1: #fdcfb4;
+  --colorStatusWarningBorder2: #bc4b09;
+
+  /* ─── Status: Danger ─── */
+  --colorStatusDangerBackground1: #fdf3f4;
+  --colorStatusDangerBackground2: #eeacb2;
+  --colorStatusDangerBackground3: #c50f1f;
+  --colorStatusDangerBackground3Hover: #b10e1c;
+  --colorStatusDangerBackground3Pressed: #960b18;
+  --colorStatusDangerForeground1: #b10e1c;
+  --colorStatusDangerForeground2: #6e0811;
+  --colorStatusDangerForeground3: #c50f1f;
+  --colorStatusDangerForegroundInverted: #dc626d;
+  --colorStatusDangerBorderActive: #c50f1f;
+  --colorStatusDangerBorder1: #eeacb2;
+  --colorStatusDangerBorder2: #c50f1f;
+}
+
+/* ─── Global Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase300);
+  line-height: var(--lineHeightBase300);
+  color: var(--colorNeutralForeground1);
+  background-color: var(--colorNeutralBackground3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── FluentWind Surface Classes ─── */
+
+.fluent-page {
+  background-color: var(--colorNeutralBackground3);
+  color: var(--colorNeutralForeground1);
+  font-family: var(--fontFamilyBase);
+}
+
+.fluent-panel {
+  background-color: var(--colorNeutralBackground1);
+  color: var(--colorNeutralForeground1);
+  border: 1px solid var(--colorNeutralStroke1);
+  border-radius: var(--borderRadiusMedium);
+  box-shadow: var(--shadow4);
+}
+
+.fluent-surface-subtle {
+  background-color: var(--colorNeutralBackground2);
+  border-radius: var(--borderRadiusMedium);
+}
+
+.fluent-surface-deep {
+  background-color: var(--colorNeutralBackground3);
+  border-radius: var(--borderRadiusMedium);
+}
+
+.fluent-interactive {
+  background-color: var(--colorNeutralBackground1);
+  color: var(--colorNeutralForeground1);
+  border-radius: var(--borderRadiusMedium);
+  cursor: pointer;
+  transition: background-color var(--durationFast) var(--curveEasyEase);
+}
+.fluent-interactive:hover {
+  background-color: var(--colorNeutralBackground1Hover);
+}
+.fluent-interactive:active {
+  background-color: var(--colorNeutralBackground1Pressed);
+}
+
+.fluent-interactive-subtle {
+  background-color: transparent;
+  color: var(--colorNeutralForeground1);
+  border-radius: var(--borderRadiusMedium);
+  cursor: pointer;
+  transition: background-color var(--durationFast) var(--curveEasyEase);
+}
+.fluent-interactive-subtle:hover {
+  background-color: var(--colorNeutralBackground1Hover);
+}
+.fluent-interactive-subtle:active {
+  background-color: var(--colorNeutralBackground1Pressed);
+}
+
+.fluent-brand {
+  background-color: var(--colorBrandBackground);
+  color: var(--colorNeutralForegroundOnBrand);
+  border-radius: var(--borderRadiusMedium);
+  transition: background-color var(--durationFast) var(--curveEasyEase);
+}
+.fluent-brand:hover {
+  background-color: var(--colorBrandBackgroundHover);
+}
+.fluent-brand:active {
+  background-color: var(--colorBrandBackgroundPressed);
+}
+
+.fluent-brand-subtle {
+  background-color: var(--colorBrandBackground2);
+  color: var(--colorBrandForeground1);
+  border-radius: var(--borderRadiusMedium);
+}
+
+.fluent-badge-success {
+  background-color: var(--colorStatusSuccessBackground1);
+  color: var(--colorStatusSuccessForeground1);
+  border-radius: var(--borderRadiusSmall);
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase200);
+  line-height: var(--lineHeightBase200);
+  font-weight: var(--fontWeightMedium);
+}
+.fluent-badge-warning {
+  background-color: var(--colorStatusWarningBackground1);
+  color: var(--colorStatusWarningForeground1);
+  border-radius: var(--borderRadiusSmall);
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase200);
+  line-height: var(--lineHeightBase200);
+  font-weight: var(--fontWeightMedium);
+}
+.fluent-badge-danger {
+  background-color: var(--colorStatusDangerBackground1);
+  color: var(--colorStatusDangerForeground1);
+  border-radius: var(--borderRadiusSmall);
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase200);
+  line-height: var(--lineHeightBase200);
+  font-weight: var(--fontWeightMedium);
+}
+.fluent-badge-info {
+  background-color: var(--colorNeutralBackground4);
+  color: var(--colorNeutralForeground1);
+  border-radius: var(--borderRadiusSmall);
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase200);
+  line-height: var(--lineHeightBase200);
+  font-weight: var(--fontWeightMedium);
+}
+
+.fluent-banner-success {
+  background-color: var(--colorStatusSuccessBackground2);
+  color: var(--colorStatusSuccessForeground1);
+  border-left: 3px solid var(--colorStatusSuccessForeground1);
+}
+.fluent-banner-warning {
+  background-color: var(--colorStatusWarningBackground2);
+  color: var(--colorStatusWarningForeground1);
+  border-left: 3px solid var(--colorStatusWarningForeground1);
+}
+.fluent-banner-danger {
+  background-color: var(--colorStatusDangerBackground2);
+  color: var(--colorStatusDangerForeground1);
+  border-left: 3px solid var(--colorStatusDangerForeground1);
+}
+
+.fluent-label {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase200);
+  line-height: var(--lineHeightBase200);
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorNeutralForeground2);
+}
+
+.fluent-caption {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase100);
+  line-height: var(--lineHeightBase100);
+  font-weight: var(--fontWeightRegular);
+  color: var(--colorNeutralForeground3);
+}
+
+.fluent-section-header {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase300);
+  line-height: var(--lineHeightBase300);
+  font-weight: var(--fontWeightSemibold);
+  color: var(--colorNeutralForeground1);
+}
+
+.fluent-divider {
+  border-color: var(--colorNeutralStroke2);
+}
+
+.fluent-focus-ring:focus-visible {
+  outline: 2px solid var(--colorStrokeFocus2);
+  outline-offset: 2px;
+  border-radius: var(--borderRadiusMedium);
+}
+
+.fluent-scroll {
+  overflow-y: auto;
+  scrollbar-color: var(--colorNeutralStroke1) transparent;
+  scrollbar-width: thin;
+}
