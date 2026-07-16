@@ -1,0 +1,5 @@
+[[libraries]]
+  name = "MS Fluent for BIC"
+  project_id = "37cc4f93-125b-40e7-8c44-a463af305fed"
+  slug = "ms-fluent-for-bic-65f6c6"
+  version = "1.0.0"
